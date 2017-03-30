@@ -1,5 +1,5 @@
 # serilog-sinks-marten
-A Serilog sink that writes events to Postgresql using Marten
+A Serilog sink that writes events to Postgresql using [Marten] (https://github.com/JasperFx/marten)
 
 Register in the documentstore or create your own mapping for the type `LogMessage`
 ```csharp

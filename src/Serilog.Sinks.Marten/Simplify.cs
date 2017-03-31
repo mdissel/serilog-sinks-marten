@@ -11,7 +11,7 @@ namespace Serilog.Sinks.Marten
 {
     /// <summary>
     ///     Converts <see cref="LogEventProperty" /> values into simple scalars,
-    ///     dictionaries and lists so that they can be persisted in MSSqlServer.
+    ///     dictionaries and lists so that they can be persisted in Marten.
     /// </summary>
     public static class SimplifyPropertyFormatter
     {

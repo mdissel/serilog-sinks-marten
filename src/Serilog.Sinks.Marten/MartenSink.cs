@@ -20,7 +20,6 @@ namespace Serilog.Sinks.Marten
     /// </summary>
     public class MartenSink : PeriodicBatchingSink
     {
-        private readonly int _BatchPostingLimit;
         /// <summary>
         ///     A reasonable default for the number of events posted in
         ///     each batch.
@@ -34,9 +33,8 @@ namespace Serilog.Sinks.Marten
 
         private readonly IFormatProvider _formatProvider;
         private readonly m.IDocumentStore _DocumentStore;
-        private readonly bool _RenderMessage;
         private readonly bool _ExceptionAsString;
-
+        private readonly int _BatchPostingLimit;
 
         /// <summary>
         ///     Construct a sink posting to the specified database.
@@ -44,9 +42,8 @@ namespace Serilog.Sinks.Marten
         /// <param name="documentStore">The document store</param>
         /// <param name="batchPostingLimit">The maximum number of events to post in a single batch.</param>
         /// <param name="period">The time to wait between checking for event batches.</param>
+        /// <param name="exceptionAsString">if enabled store the exception as <code>Exception.ToString()</code></param>
         /// <param name="formatProvider">Supplies culture-specific formatting information, or null.</param>
-        /// <param name="autoCreateSqlTable">Create log table with the provided name on destination sql server.</param>
-        /// <param name="columnOptions">Options that pertain to columns</param>
         public MartenSink(
             m.IDocumentStore documentStore,
             int batchPostingLimit,

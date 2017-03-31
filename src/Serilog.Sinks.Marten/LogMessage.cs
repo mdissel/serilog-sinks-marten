@@ -31,7 +31,11 @@ namespace Serilog.Sinks.Marten
             }
         }
 
-        public Guid ID { get; set; }
+        /// <summary>
+        /// Defined as long. Guid is could also be used, but the first six bytes of the comb guid are a timestamp with millisecond precision and 
+        /// the rest of the bytes are random data so we loose the real order when sorting by id.
+        /// </summary>
+        public long ID { get; set; }
 
         //
         // Summary:

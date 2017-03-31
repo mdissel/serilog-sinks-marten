@@ -16,7 +16,8 @@ namespace Serilog.Sinks.Marten
         /// <param name="storeOptions"></param>
         public static void MappingForSerilog(this m.StoreOptions storeOptions)
         {
-            storeOptions.MappingFor(typeof(LogMessage)).AddGinIndexToData();
+            storeOptions.Schema.For<LogMessage>()
+                .GinIndexJsonData();
         }
 
     }

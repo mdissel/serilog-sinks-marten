@@ -137,6 +137,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestWithEnricher.cs" />
     <Compile Include="TestDefaultConfiguration.cs" />
     <Compile Include="ConnectionSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

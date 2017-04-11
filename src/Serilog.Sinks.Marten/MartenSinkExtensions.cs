@@ -1,10 +1,7 @@
 ﻿using System;
-using Marten;
 using Serilog.Configuration;
 using Serilog.Events;
 using Serilog.Sinks.Marten;
-using System.Configuration;
-using Serilog.Debugging;
 using m = Marten;
 using Serilog.Core;
 

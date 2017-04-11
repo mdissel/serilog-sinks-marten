@@ -76,17 +76,17 @@ namespace Tests
         public void MessageWithDynamicClass()
         {
             var sensorInput = new { Latitude = 25, Longitude = 134 };
-            Log.Information("MessageWithDynamicClass {sensorInput}", sensorInput);
+            Log.Information("MessageWithDynamicClass {@sensorInput}", sensorInput);
             Log.CloseAndFlush();
 
             using (m.IQuerySession session = documentStore.QuerySession())
             {
                 LogMessage logMessage = session.Query<LogMessage>().FirstOrDefault(x => x.MessageTemplate.StartsWith("MessageWithDynamicClass "));
-                Assert.Equal("MessageWithDynamicClass {sensorInput}", logMessage.MessageTemplate);
+                Assert.Equal("MessageWithDynamicClass {@sensorInput}", logMessage.MessageTemplate);
                 Assert.Equal(Serilog.Events.LogEventLevel.Information, logMessage.Level);
                 Assert.Equal(DateTime.Today, logMessage.Timestamp.Date);
                 Assert.Equal(1, logMessage.Properties.Count);
-                Assert.Equal("MessageWithDynamicClass \"{ Latitude = 25, Longitude = 134 }\"", logMessage.Message);
+                Assert.Equal("MessageWithDynamicClass { Latitude: 25, Longitude: 134 }", logMessage.Message);
             }
         }
 

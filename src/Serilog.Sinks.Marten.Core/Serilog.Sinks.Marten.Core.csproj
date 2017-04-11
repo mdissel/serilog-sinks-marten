@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AssemblyName>Serilog.Sinks.Marten</AssemblyName>
+    <RootNamespace>Serilog.Sinks.Marten</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Serilog.Sinks.Marten\LogMessage.cs" Link="LogMessage.cs" />
+    <Compile Include="..\Serilog.Sinks.Marten\MartenDocumentStoreOptionsExtentions.cs" Link="MartenDocumentStoreOptionsExtentions.cs" />
+    <Compile Include="..\Serilog.Sinks.Marten\MartenSink.cs" Link="MartenSink.cs" />
+    <Compile Include="..\Serilog.Sinks.Marten\MartenSinkExtensions.cs" Link="MartenSinkExtensions.cs" />
+    <Compile Include="..\Serilog.Sinks.Marten\Simplify.cs" Link="Simplify.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Marten" Version="1.4.1" />
+    <PackageReference Include="Serilog" Version="2.4.0" />
+    <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.1.0" />
+  </ItemGroup>
+
+</Project>
